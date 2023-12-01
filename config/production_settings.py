@@ -13,7 +13,7 @@ DATABASES = {
         'NAME': os.getenv('POSTGRES_NAME'),
         'USER': os.getenv('POSTGRES_USER'),
         'PASSWORD': os.getenv('POSTGRES_PASS'),
-        'HOST': os.getenv('PRODUCTION_PG_HOST'),  # set in docker-compose
+        'HOST': 'db',  # set in docker-compose
         'PORT': os.getenv('POSTGRES_PORT'),
     }
 }

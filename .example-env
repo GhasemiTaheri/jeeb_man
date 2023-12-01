@@ -1,0 +1,7 @@
+SECRET_KEY= # generate new secret_key
+
+POSTGRES_NAME=jeeb_man
+POSTGRES_USER=postgres
+POSTGRES_PASS=4542
+POSTGRES_HOST=localhost
+POSTGRES_PORT=5432
