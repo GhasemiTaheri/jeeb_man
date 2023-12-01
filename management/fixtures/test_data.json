@@ -1,0 +1,728 @@
+[
+  {
+    "model": "admin.logentry",
+    "pk": 1,
+    "fields": {
+      "action_time": "2023-12-01T16:38:26.387Z",
+      "user": 2,
+      "content_type": 6,
+      "object_id": "1",
+      "object_repr": "moji",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 2,
+    "fields": {
+      "action_time": "2023-12-01T17:14:15.223Z",
+      "user": 2,
+      "content_type": 6,
+      "object_id": "3",
+      "object_repr": "user1",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 3,
+    "fields": {
+      "action_time": "2023-12-01T17:14:30.918Z",
+      "user": 2,
+      "content_type": 6,
+      "object_id": "4",
+      "object_repr": "user2",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 4,
+    "fields": {
+      "action_time": "2023-12-01T17:15:25.501Z",
+      "user": 2,
+      "content_type": 8,
+      "object_id": "1",
+      "object_repr": "100000",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 5,
+    "fields": {
+      "action_time": "2023-12-01T17:16:11.360Z",
+      "user": 2,
+      "content_type": 8,
+      "object_id": "2",
+      "object_repr": "250000",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 6,
+    "fields": {
+      "action_time": "2023-12-01T17:16:42.498Z",
+      "user": 2,
+      "content_type": 8,
+      "object_id": "3",
+      "object_repr": "320000",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 7,
+    "fields": {
+      "action_time": "2023-12-01T17:17:13.934Z",
+      "user": 2,
+      "content_type": 8,
+      "object_id": "4",
+      "object_repr": "50000",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 8,
+    "fields": {
+      "action_time": "2023-12-01T17:18:04.717Z",
+      "user": 2,
+      "content_type": 8,
+      "object_id": "5",
+      "object_repr": "36500",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 9,
+    "fields": {
+      "action_time": "2023-12-01T17:18:28.787Z",
+      "user": 2,
+      "content_type": 8,
+      "object_id": "6",
+      "object_repr": "56000",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 10,
+    "fields": {
+      "action_time": "2023-12-01T17:18:47.171Z",
+      "user": 2,
+      "content_type": 8,
+      "object_id": "7",
+      "object_repr": "360000",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 11,
+    "fields": {
+      "action_time": "2023-12-01T17:19:10.745Z",
+      "user": 2,
+      "content_type": 8,
+      "object_id": "8",
+      "object_repr": "65000",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 12,
+    "fields": {
+      "action_time": "2023-12-01T17:19:56.578Z",
+      "user": 2,
+      "content_type": 8,
+      "object_id": "9",
+      "object_repr": "3200",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 1,
+    "fields": {
+      "name": "Can add log entry",
+      "content_type": 1,
+      "codename": "add_logentry"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 2,
+    "fields": {
+      "name": "Can change log entry",
+      "content_type": 1,
+      "codename": "change_logentry"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 3,
+    "fields": {
+      "name": "Can delete log entry",
+      "content_type": 1,
+      "codename": "delete_logentry"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 4,
+    "fields": {
+      "name": "Can view log entry",
+      "content_type": 1,
+      "codename": "view_logentry"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 5,
+    "fields": {
+      "name": "Can add permission",
+      "content_type": 2,
+      "codename": "add_permission"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 6,
+    "fields": {
+      "name": "Can change permission",
+      "content_type": 2,
+      "codename": "change_permission"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 7,
+    "fields": {
+      "name": "Can delete permission",
+      "content_type": 2,
+      "codename": "delete_permission"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 8,
+    "fields": {
+      "name": "Can view permission",
+      "content_type": 2,
+      "codename": "view_permission"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 9,
+    "fields": {
+      "name": "Can add group",
+      "content_type": 3,
+      "codename": "add_group"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 10,
+    "fields": {
+      "name": "Can change group",
+      "content_type": 3,
+      "codename": "change_group"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 11,
+    "fields": {
+      "name": "Can delete group",
+      "content_type": 3,
+      "codename": "delete_group"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 12,
+    "fields": {
+      "name": "Can view group",
+      "content_type": 3,
+      "codename": "view_group"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 13,
+    "fields": {
+      "name": "Can add content type",
+      "content_type": 4,
+      "codename": "add_contenttype"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 14,
+    "fields": {
+      "name": "Can change content type",
+      "content_type": 4,
+      "codename": "change_contenttype"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 15,
+    "fields": {
+      "name": "Can delete content type",
+      "content_type": 4,
+      "codename": "delete_contenttype"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 16,
+    "fields": {
+      "name": "Can view content type",
+      "content_type": 4,
+      "codename": "view_contenttype"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 17,
+    "fields": {
+      "name": "Can add session",
+      "content_type": 5,
+      "codename": "add_session"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 18,
+    "fields": {
+      "name": "Can change session",
+      "content_type": 5,
+      "codename": "change_session"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 19,
+    "fields": {
+      "name": "Can delete session",
+      "content_type": 5,
+      "codename": "delete_session"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 20,
+    "fields": {
+      "name": "Can view session",
+      "content_type": 5,
+      "codename": "view_session"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 21,
+    "fields": {
+      "name": "Can add user",
+      "content_type": 6,
+      "codename": "add_user"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 22,
+    "fields": {
+      "name": "Can change user",
+      "content_type": 6,
+      "codename": "change_user"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 23,
+    "fields": {
+      "name": "Can delete user",
+      "content_type": 6,
+      "codename": "delete_user"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 24,
+    "fields": {
+      "name": "Can view user",
+      "content_type": 6,
+      "codename": "view_user"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 25,
+    "fields": {
+      "name": "Can add دسته بندی",
+      "content_type": 7,
+      "codename": "add_category"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 26,
+    "fields": {
+      "name": "Can change دسته بندی",
+      "content_type": 7,
+      "codename": "change_category"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 27,
+    "fields": {
+      "name": "Can delete دسته بندی",
+      "content_type": 7,
+      "codename": "delete_category"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 28,
+    "fields": {
+      "name": "Can view دسته بندی",
+      "content_type": 7,
+      "codename": "view_category"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 29,
+    "fields": {
+      "name": "Can add تراکنش",
+      "content_type": 8,
+      "codename": "add_transaction"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 30,
+    "fields": {
+      "name": "Can change تراکنش",
+      "content_type": 8,
+      "codename": "change_transaction"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 31,
+    "fields": {
+      "name": "Can delete تراکنش",
+      "content_type": 8,
+      "codename": "delete_transaction"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 32,
+    "fields": {
+      "name": "Can view تراکنش",
+      "content_type": 8,
+      "codename": "view_transaction"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 1,
+    "fields": {
+      "app_label": "admin",
+      "model": "logentry"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 2,
+    "fields": {
+      "app_label": "auth",
+      "model": "permission"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 3,
+    "fields": {
+      "app_label": "auth",
+      "model": "group"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 4,
+    "fields": {
+      "app_label": "contenttypes",
+      "model": "contenttype"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 5,
+    "fields": {
+      "app_label": "sessions",
+      "model": "session"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 6,
+    "fields": {
+      "app_label": "profiles",
+      "model": "user"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 7,
+    "fields": {
+      "app_label": "settings",
+      "model": "category"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 8,
+    "fields": {
+      "app_label": "management",
+      "model": "transaction"
+    }
+  },
+  {
+    "model": "sessions.session",
+    "pk": "tx41ptw94drapg8frw06btgqw3pzzh32",
+    "fields": {
+      "session_data": ".eJxVjEEOwiAQRe_C2hAolEGX7nsGMsNMbdVAUtqV8e7apAvd_vfef6mE2zqlrcmSZlYX1anT70aYH1J2wHcst6pzLesyk94VfdCmh8ryvB7u38GEbfrWjrMRBGBHMkYXMzC5QCOCt-jQszUgvu8DCZrOg0jHns4AAbONAdX7AwhXOIs:1r8zrN:IbxyJf8yUDadspzbbvYI4m3OoAHyB1bhq8297HwzwQ0",
+      "expire_date": "2023-12-15T09:30:57.393Z"
+    }
+  },
+  {
+    "model": "profiles.user",
+    "pk": 2,
+    "fields": {
+      "password": "pbkdf2_sha256$600000$WZa08LFsY82hf4a4bovOR3$zpnwlMFbOO3PImZa21rl+U3GkNXYucOLf/BQkXT0zTY=",
+      "last_login": "2023-12-01T09:30:57.386Z",
+      "is_superuser": true,
+      "username": "admin",
+      "first_name": "",
+      "last_name": "",
+      "email": "",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2023-12-01T09:30:52.508Z",
+      "phone_number": null,
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "profiles.user",
+    "pk": 3,
+    "fields": {
+      "password": "pbkdf2_sha256$600000$WZa08LFsY82hf4a4bovOR3$zpnwlMFbOO3PImZa21rl+U3GkNXYucOLf/BQkXT0zTY=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "user1",
+      "first_name": "کاربر1",
+      "last_name": "",
+      "email": "",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2023-12-01T17:13:56Z",
+      "phone_number": null,
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "profiles.user",
+    "pk": 4,
+    "fields": {
+      "password": "pbkdf2_sha256$600000$WZa08LFsY82hf4a4bovOR3$zpnwlMFbOO3PImZa21rl+U3GkNXYucOLf/BQkXT0zTY=",
+      "last_login": null,
+      "is_superuser": false,
+      "username": "user2",
+      "first_name": "کاربر2",
+      "last_name": "",
+      "email": "",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2023-12-01T17:14:15Z",
+      "phone_number": null,
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "settings.category",
+    "pk": 1,
+    "fields": {
+      "name": "food",
+      "group": "1",
+      "owner": null
+    }
+  },
+  {
+    "model": "settings.category",
+    "pk": 2,
+    "fields": {
+      "name": "trip",
+      "group": "1",
+      "owner": null
+    }
+  },
+  {
+    "model": "settings.category",
+    "pk": 3,
+    "fields": {
+      "name": "transport",
+      "group": "1",
+      "owner": null
+    }
+  },
+  {
+    "model": "settings.category",
+    "pk": 4,
+    "fields": {
+      "name": "salary",
+      "group": "2",
+      "owner": null
+    }
+  },
+  {
+    "model": "settings.category",
+    "pk": 5,
+    "fields": {
+      "name": "gift",
+      "group": "2",
+      "owner": null
+    }
+  },
+  {
+    "model": "settings.category",
+    "pk": 6,
+    "fields": {
+      "name": "sell",
+      "group": "2",
+      "owner": null
+    }
+  },
+  {
+    "model": "management.transaction",
+    "pk": 1,
+    "fields": {
+      "owner": 3,
+      "amount": 100000,
+      "group": "2",
+      "category": 4,
+      "date": "2023-12-01"
+    }
+  },
+  {
+    "model": "management.transaction",
+    "pk": 2,
+    "fields": {
+      "owner": 3,
+      "amount": 250000,
+      "group": "2",
+      "category": 5,
+      "date": "2023-10-17"
+    }
+  },
+  {
+    "model": "management.transaction",
+    "pk": 3,
+    "fields": {
+      "owner": 3,
+      "amount": 320000,
+      "group": "2",
+      "category": 4,
+      "date": "2023-12-02"
+    }
+  },
+  {
+    "model": "management.transaction",
+    "pk": 4,
+    "fields": {
+      "owner": 3,
+      "amount": 50000,
+      "group": "1",
+      "category": 1,
+      "date": "2023-12-01"
+    }
+  },
+  {
+    "model": "management.transaction",
+    "pk": 5,
+    "fields": {
+      "owner": 3,
+      "amount": 36500,
+      "group": "1",
+      "category": 2,
+      "date": "2023-11-13"
+    }
+  },
+  {
+    "model": "management.transaction",
+    "pk": 6,
+    "fields": {
+      "owner": 4,
+      "amount": 56000,
+      "group": "2",
+      "category": 4,
+      "date": "2023-12-01"
+    }
+  },
+  {
+    "model": "management.transaction",
+    "pk": 7,
+    "fields": {
+      "owner": 4,
+      "amount": 360000,
+      "group": "2",
+      "category": 5,
+      "date": "2023-10-08"
+    }
+  },
+  {
+    "model": "management.transaction",
+    "pk": 8,
+    "fields": {
+      "owner": 4,
+      "amount": 65000,
+      "group": "1",
+      "category": 1,
+      "date": "2023-11-30"
+    }
+  },
+  {
+    "model": "management.transaction",
+    "pk": 9,
+    "fields": {
+      "owner": 4,
+      "amount": 3200,
+      "group": "1",
+      "category": 3,
+      "date": "2023-10-08"
+    }
+  }
+]

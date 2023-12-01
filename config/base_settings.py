@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'rest_framework_simplejwt',
     "corsheaders",
     'django_filters',
+    'drf_spectacular',
     # local app
     'profiles',
     'settings',

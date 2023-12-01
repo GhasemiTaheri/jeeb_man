@@ -22,7 +22,9 @@ def build_django_rest_framework(custom_settings=None):
             'rest_framework.pagination.PageNumberPagination',
         'PAGE_SIZE': 20,
         'DEFAULT_FILTER_BACKENDS': [
-            'django_filters.rest_framework.DjangoFilterBackend']
+            'django_filters.rest_framework.DjangoFilterBackend'
+        ],
+        'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
     }
     if custom_settings:
         REST_FRAMEWORK.update(custom_settings)
