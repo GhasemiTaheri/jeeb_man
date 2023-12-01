@@ -17,7 +17,7 @@ class DisplayTextChoicesField(ChoiceField):
         return self.choices.get(value)
 
 
-class PkSlugRelatedField(RelatedField, serializers.SlugRelatedField):
+class PkSlugRelatedField(serializers.SlugRelatedField):
     """
         This class is used when we want to receive the id of an object as an
         input and display our desired field
