@@ -1,6 +1,8 @@
 from django.contrib.auth import get_user_model
 from django.db import models
 
+from settings.managers import CategoryManager
+
 
 class Category(models.Model):
     name = models.CharField(max_length=50, verbose_name='دسته بندی')
@@ -16,8 +18,14 @@ class Category(models.Model):
                               # Only active users can create categories for
                               # themselves
                               limit_choices_to={'is_active': True},
+                              # Categories that do not have an owner are
+                              # considered public categories
                               null=True,
                               verbose_name='مالک')
+
+    # model managers
+    objects = models.Manager()
+    scoop_objects = CategoryManager.as_manager()
 
     class Meta:
         verbose_name = 'دسته بندی'
