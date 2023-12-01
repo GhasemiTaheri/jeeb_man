@@ -13,8 +13,8 @@ class Transaction(models.Model):
     amount = models.PositiveIntegerField(validators=[MinValueValidator(1)],
                                          verbose_name='مبلغ')
     GROUP_TYPE = [
-        ('1', 'خرج'),
-        ('2', 'درآمد')
+        ('1', 'expense'),
+        ('2', 'income')
     ]
     group = models.CharField(max_length=1, choices=GROUP_TYPE, null=True,
                              verbose_name='نوع تراکنش')

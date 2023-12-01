@@ -1,6 +1,6 @@
-from django.contrib.auth import get_user_model
 from rest_framework.reverse import reverse
 
+from management.models import Transaction
 from utility.generic import TestHelperUtility
 
 
@@ -9,6 +9,25 @@ class TransactionViewSetTestCase(TestHelperUtility):
 
     def setUp(self) -> None:
         self.base_url = reverse('transaction-list')
+        u1_token = self.get_user_credentials(username='user1',
+                                             password='admin')
+        self.client.credentials(HTTP_AUTHORIZATION=u1_token)
 
+    def test_list(self):
+        u1_token = self.get_user_credentials(username='user1',
+                                             password='admin')
+        self.client.credentials(HTTP_AUTHORIZATION=u1_token)
 
-    # def test_delete
+        response = self.client.get(self.base_url)
+        self.assertEqual(response.status_code, 200)
+
+    def test_update(self):
+        t1 = Transaction.objects.filter(owner__username='user1').first()
+        response = self.client.patch(reverse('transaction-detail', [t1.id]),
+                                     data={'amount': 25000})
+        self.assertEqual(response.status_code, 200)
+
+    def test_delete(self):
+        t1 = Transaction.objects.filter(owner__username='user1').first()
+        response = self.client.delete(reverse('transaction-detail', [t1.id]))
+        self.assertEqual(response.status_code, 204)

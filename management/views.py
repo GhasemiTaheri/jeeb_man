@@ -17,7 +17,7 @@ class TransactionViewSet(ModelViewSet):
     def get_queryset(self):
         return Transaction.scoop_objects \
             .filter_by_user(self.request.user) \
-            .select_related('owner')
+            .select_related('owner').order_by('id')
 
 
 class ReportViewSet(GenericViewSet):
