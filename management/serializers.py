@@ -1,6 +1,6 @@
 from rest_framework import serializers
 from rest_framework.exceptions import ValidationError
-from rest_framework.fields import HiddenField, CurrentUserDefault
+from rest_framework.fields import HiddenField, CurrentUserDefault, IntegerField
 
 from management.models import Transaction
 from settings.models import Category
@@ -29,3 +29,9 @@ class TransactionSerializer(serializers.ModelSerializer):
             raise ValidationError('شما مجاز به انتخاب این دسته بندی نیستید')
 
         return value
+
+
+class CategoryExpenseSerializer(serializers.Serializer):
+    category = PkSlugRelatedField(slug_field='name',
+                                  queryset=Category.objects.all())
+    expense = IntegerField()

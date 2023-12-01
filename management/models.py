@@ -33,9 +33,5 @@ class Transaction(models.Model):
         verbose_name_plural = 'تراکنش ها'
         default_manager_name = 'objects'
 
-    @property
-    def balance(self):
-        return ''
-
     def __str__(self):
         return f'{self.amount}'
