@@ -7,8 +7,8 @@ from settings.managers import CategoryManager
 class Category(models.Model):
     name = models.CharField(max_length=50, verbose_name='دسته بندی')
     GROUP_TYPE = [
-        ('1', 'خرج'),
-        ('2', 'درآمد')
+        ('1', 'expense'),
+        ('2', 'income')
     ]
     group = models.CharField(max_length=1, choices=GROUP_TYPE, default='1',
                              verbose_name='نوع دسته بندی')

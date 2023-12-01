@@ -1,9 +1,7 @@
 from django.core.exceptions import ObjectDoesNotExist
 from django.utils.encoding import smart_str
 from rest_framework import serializers
-from rest_framework.fields import ChoiceField, DateField
-from rest_framework.relations import RelatedField
-from persiantools.jdatetime import JalaliDate
+from rest_framework.fields import ChoiceField
 
 
 class DisplayTextChoicesField(ChoiceField):
@@ -53,23 +51,3 @@ class PkSlugRelatedField(serializers.SlugRelatedField):
             'id': getattr(obj, 'id'),
             'text': super().to_representation(obj)
         }
-
-
-class JalaliDateField(DateField):
-
-    def to_internal_value(self, value):
-        if value:
-            y, m, d = str(value).split('-')
-            gregorian = JalaliDate(int(y), int(m), int(d)).to_gregorian()
-            return super().to_internal_value(gregorian)
-
-        return super().to_internal_value(value)
-
-    def to_representation(self, value):
-        representation = super().to_representation(value)
-
-        if representation:
-            y, m, d = str().split('-')
-            return JalaliDate.to_jalali(int(y), int(m), int(d)).isoformat()
-
-        return representation

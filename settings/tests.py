@@ -35,6 +35,9 @@ class CategoryTestCase(TestHelperUtility):
                                                        password='12345')
 
     def test_default_category(self):
+        """
+        All users must have access to public categories
+        """
         u3_token = self.get_user_credentials(username='u3', password='12345')
         self.client.credentials(HTTP_AUTHORIZATION=u3_token)
 
@@ -44,6 +47,9 @@ class CategoryTestCase(TestHelperUtility):
             self.assertEqual(Category.objects.get(id=i.get('id')).owner, None)
 
     def test_list(self):
+        """
+        Test list action
+        """
         u1_token = self.get_user_credentials(username='u1', password='12345')
         self.client.credentials(HTTP_AUTHORIZATION=u1_token)
 
@@ -54,6 +60,9 @@ class CategoryTestCase(TestHelperUtility):
                           [self.u1, None])
 
     def test_create_category(self):
+        """
+        Test update action
+        """
         u1_token = self.get_user_credentials(username='u1', password='12345')
         self.client.credentials(HTTP_AUTHORIZATION=u1_token)
 
@@ -101,4 +110,17 @@ class CategoryTestCase(TestHelperUtility):
         self.assertNotEqual(category.name, 'Hiii')
         self.assertNotEqual(category.owner, self.u1)
 
-    # def test_delete
+    def test_delete_category(self):
+        u1_token = self.get_user_credentials(username='u1', password='12345')
+        self.client.credentials(HTTP_AUTHORIZATION=u1_token)
+
+        # try to delete owen category
+        category = Category.objects.filter(owner=self.u1).first()
+        response = self.client.delete(
+            reverse('category-detail', [category.id]))
+        self.assertEqual(response.status_code, 204)
+
+        # try to delete public
+        category = Category.objects.filter(owner__isnull=True).first()
+        response = self.client.patch(reverse('category-detail', [category.id]))
+        self.assertNotIn(response.status_code, [200, 204])

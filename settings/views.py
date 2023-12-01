@@ -13,6 +13,5 @@ class CategoryViewSet(ModelViewSet):
         """
         User categories plus public categories
         """
-        return Category.scoop_objects \
-            .filter_by_user(user=self.request.user) \
-            .select_related('owner')
+        return Category.scoop_objects.filter_by_user(user=self.request.user) \
+            .order_by('id')

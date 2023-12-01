@@ -5,7 +5,7 @@ from rest_framework.fields import HiddenField, CurrentUserDefault, IntegerField
 from management.models import Transaction
 from settings.models import Category
 from utility.drf.serializer_helper import DisplayTextChoicesField, \
-    PkSlugRelatedField, JalaliDateField
+    PkSlugRelatedField
 
 
 class TransactionSerializer(serializers.ModelSerializer):
@@ -13,7 +13,6 @@ class TransactionSerializer(serializers.ModelSerializer):
     group = DisplayTextChoicesField(choices=Transaction.GROUP_TYPE)
     category = PkSlugRelatedField(slug_field='name',
                                   queryset=Category.objects.all())
-    date = JalaliDateField()
 
     class Meta:
         model = Transaction

@@ -4,7 +4,7 @@ from rest_access_policy import AccessPolicy
 class CategoryAccessPolicy(AccessPolicy):
     statements = [
         {
-            "action": ["update", "destroy"],
+            "action": ["partial_update", "update", "destroy"],
             "principal": ["authenticated"],
             "effect": "allow",
             "condition": "is_owner"
