@@ -2,6 +2,8 @@ from django.contrib.auth import get_user_model
 from django.core.validators import MinValueValidator
 from django.db import models
 
+from management.managers import TransactionManager
+
 
 class Transaction(models.Model):
     owner = models.ForeignKey(get_user_model(),
@@ -22,9 +24,14 @@ class Transaction(models.Model):
                                  verbose_name='دسته بندی')
     date = models.DateField(verbose_name='تاریخ')
 
+    # model managers
+    objects = models.Manager()
+    scoop_objects = TransactionManager.as_manager()
+
     class Meta:
         verbose_name = 'تراکنش'
         verbose_name_plural = 'تراکنش ها'
+        default_manager_name = 'objects'
 
     def __str__(self):
         return f'{self.amount}'
