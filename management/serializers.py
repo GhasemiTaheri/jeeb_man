@@ -1,6 +1,7 @@
 from rest_framework import serializers
 from rest_framework.exceptions import ValidationError
-from rest_framework.fields import HiddenField, CurrentUserDefault, IntegerField
+from rest_framework.fields import HiddenField, CurrentUserDefault, \
+    IntegerField, CharField
 
 from management.models import Transaction
 from settings.models import Category
@@ -31,6 +32,5 @@ class TransactionSerializer(serializers.ModelSerializer):
 
 
 class CategoryExpenseSerializer(serializers.Serializer):
-    category = PkSlugRelatedField(slug_field='name',
-                                  queryset=Category.objects.all())
+    name = CharField()
     expense = IntegerField()

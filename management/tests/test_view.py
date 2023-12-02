@@ -31,3 +31,11 @@ class TransactionViewSetTestCase(TestHelperUtility):
         t1 = Transaction.objects.filter(owner__username='user1').first()
         response = self.client.delete(reverse('transaction-detail', [t1.id]))
         self.assertEqual(response.status_code, 204)
+
+    def test_get_balance(self):
+        response = self.client.get(reverse('transaction-get-balance'))
+        self.assertEqual(response.status_code, 200)
+
+    def test_expense_by_category(self):
+        response = self.client.get(reverse('transaction-category-expense'))
+        self.assertEqual(response.status_code, 200)
