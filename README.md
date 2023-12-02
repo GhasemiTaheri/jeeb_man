@@ -9,7 +9,7 @@ and in the following, we describe the steps of launching the project
 1. rename .example-env file to .env
 2. generate new secret key with django framework and insert it into .env file
 
-# 2- run in docker and run
+# 2- Run in docker and run
 
 1. run command in project base directory
     ```CMD
