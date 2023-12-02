@@ -1,4 +1,5 @@
 from django.db.models import Sum, F
+from django.db.models.functions import TruncMonth
 from rest_framework.decorators import action
 from rest_framework.response import Response
 from rest_framework.viewsets import ModelViewSet
@@ -6,7 +7,7 @@ from rest_framework.viewsets import ModelViewSet
 from management.filters import TransactionFilterSet
 from management.models import Transaction
 from management.serializers import TransactionSerializer, \
-    CategoryExpenseSerializer
+    CategoryExpenseSerializer, MonthExpenseSerializer
 
 
 class TransactionViewSet(ModelViewSet):
@@ -14,9 +15,7 @@ class TransactionViewSet(ModelViewSet):
     filterset_class = TransactionFilterSet
 
     def get_queryset(self):
-        return Transaction.scoop_objects \
-            .filter_by_user(self.request.user) \
-            .select_related('owner').order_by('id')
+        return Transaction.scoop_objects.filter_by_user(self.request.user)
 
     @action(detail=False)
     def get_balance(self, request, *args, **kwargs):
@@ -37,10 +36,23 @@ class TransactionViewSet(ModelViewSet):
 
     @action(detail=False, serializer_class=CategoryExpenseSerializer)
     def category_expense(self, request, *args, **kwargs):
-        queryset = Transaction.objects \
-            .filter(owner=self.request.user, group='1') \
+        # get query set with applied filters
+        queryset = self.filter_queryset(self.get_queryset()) \
             .values('category', name=F('category__name')) \
-            .annotate(expense=Sum('amount'))
+            .annotate(total_amount=Sum('amount'))
+
+        serializer = self.get_serializer(instance=queryset, many=True)
+
+        return Response(data=serializer.data)
+
+    @action(detail=False, serializer_class=MonthExpenseSerializer)
+    def month_expense(self, request, *args, **kwargs):
+        # get query set with applied filters
+        queryset = self.filter_queryset(self.get_queryset()) \
+            .annotate(month=TruncMonth('date')) \
+            .values('month', 'group') \
+            .annotate(total_amount=Sum('amount')) \
+            .values('total_amount', 'group', date=F('month'))
 
         serializer = self.get_serializer(instance=queryset, many=True)
 

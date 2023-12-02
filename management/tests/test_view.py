@@ -39,3 +39,7 @@ class TransactionViewSetTestCase(TestHelperUtility):
     def test_expense_by_category(self):
         response = self.client.get(reverse('transaction-category-expense'))
         self.assertEqual(response.status_code, 200)
+
+    def test_monthly_expense(self):
+        response = self.client.get(reverse('transaction-month-expense'))
+        self.assertEqual(response.status_code, 200)

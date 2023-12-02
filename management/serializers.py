@@ -1,7 +1,7 @@
 from rest_framework import serializers
 from rest_framework.exceptions import ValidationError
 from rest_framework.fields import HiddenField, CurrentUserDefault, \
-    IntegerField, CharField
+    IntegerField, CharField, DateField
 
 from management.models import Transaction
 from settings.models import Category
@@ -33,4 +33,10 @@ class TransactionSerializer(serializers.ModelSerializer):
 
 class CategoryExpenseSerializer(serializers.Serializer):
     name = CharField()
-    expense = IntegerField()
+    total_amount = IntegerField()
+
+
+class MonthExpenseSerializer(serializers.Serializer):
+    date = DateField()
+    group = DisplayTextChoicesField(choices=Transaction.GROUP_TYPE)
+    total_amount = IntegerField()
