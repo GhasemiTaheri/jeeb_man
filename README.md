@@ -1,6 +1,6 @@
 # intro
 
-This repository contains a test project for Quora educational boot camp.
+This repository contains a test project for Quera educational boot camp.
 First of all, I would like to express my gratitude to the Quera team for giving me this opportunity.
 and in the following, we describe the steps of launching the project
 
