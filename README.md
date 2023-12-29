@@ -1,3 +1,6 @@
+# intro
+"Jeeb man" is a service for personal financial management implemented with Django Rest Framework.
+
 # 1- Create environment variables
 
 1. rename .example-env file to .env
